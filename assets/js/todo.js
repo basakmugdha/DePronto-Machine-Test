@@ -1,24 +1,22 @@
 function items(item) {
-    console.log(item);
+    // console.log(item);
     if (item.completed) {
         return (
             ` <div class="todo-item complete">
-            <div class="checker">
-            <span class=""><input type="checkbox"></span>
-            </div> 
+            <div class="checker"><span class=""><input type="checkbox" checked></span></div> 
             <span>${item.title} </span> 
             <a href="javascript:void(0);" class="float-right remove-todo-item">
-            <i class="icon-close"></i>
-            </a>
+            <i class="icon-close"></i></a>
             </div>`
         );
     }
     else {
         return (
             ` <div class="todo-item active">
-            <div class="checker"><span class="only-complete"><input type="checkbox"></span></div>
+            <div class="checker"><span class=""><input type="checkbox"></span></div>
             <span>${item.title}</span>
-            <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+            <a href="javascript:void(0);" class="float-right remove-todo-item">
+            <i class="icon-close"></i></a>
         </div>`
         );
     }
