@@ -10,7 +10,7 @@ function comment(comment) {
                         <div class="d-flex justify-content-between">
                             <div class="d-flex align-items-center">
                                 <h5 class ="me-3" >
-                                    <a > ${comment.name}</a>
+                                    <p class="mb-0"> ${comment.name}</p>
                                 </h5>
                                 <p class="mb-0">${comment.email}</p>
                             </div>
@@ -29,15 +29,15 @@ if (searchParams.has('id')) {
         $('#blog-title').html(data.title);
         $('#blog-body').html(data.body);
         
-        var count=0 ;
+        let count=0;
         $.getJSON("https://jsonplaceholder.typicode.com/comments", function (data) {
             $.each(data , function(index, item) { 
                 if(item.postId==id){
                     $('#blog-comments').append(comment(item));
-                    count+=1;
+                    count++;
                 }
             });
+            $('.blog-comments-number').html(count+" Comments");
         });
-        $('.blog-comments-number').html(count+" Comments");
     });
 }
